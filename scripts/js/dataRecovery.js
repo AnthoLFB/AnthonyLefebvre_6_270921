@@ -9,7 +9,7 @@ class dataRecovery
     {
         //Création de la requête et récupération du résultat dans une variable
         let requestResult = 
-            fetch("scripts/js/" + this.jsonFileName)
+            fetch("scripts/js/data/" + this.jsonFileName)
             .then(function(res) 
             {
                 if (res.ok) 
