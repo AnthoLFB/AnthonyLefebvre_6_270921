@@ -38,4 +38,20 @@ class Tag
         //Retourne le tableau avec les noms des tags
         return tagsArray;
     }
+
+    //Ajoute les events sur les tags dans la barre de navigation
+    addEventOnTags()
+    {
+        let tags = document.getElementsByClassName("header__navBar__list__item__link");
+
+        Array.from(tags).forEach(function(tag) {
+            tag.addEventListener('click', function(event){
+                event.preventDefault();
+                let filter = tag.textContent
+                new HomeView().filteredPhotographersRender(filter);
+             });
+          });
+    }
+
+
 }
