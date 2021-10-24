@@ -40,9 +40,9 @@ class Tag
     }
 
     //Ajoute les events sur les tags dans la barre de navigation
-    addEventOnTags()
+    addEventOnTags(tagClassName)
     {
-        let tags = document.getElementsByClassName("header__navBar__list__item__link");
+        let tags = document.getElementsByClassName(tagClassName);
 
         Array.from(tags).forEach(function(tag) {
             tag.addEventListener('click', function(event){
