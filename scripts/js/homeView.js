@@ -1,5 +1,84 @@
 class HomeView
 {
+    constructor(tags, photographers)
+    {
+        this.tags = tags;
+        this.photographers = photographers;
+    }
+
+    renderTags()
+    {
+        //Récupération du container
+        let container = document.querySelector('.header__navBar__list');
+
+        // Boucle sur un tableau d'objet Tag
+        this.tags.forEach(tag => 
+        {
+             // Création du lien
+            let listItem = document.createElement("li");
+            
+            // Ajout d'une classe
+            listItem.classList.add("header__navBar__list__item");
+
+            // Ajout de l'item à la liste
+            container.appendChild(listItem);
+
+            // Création d'un lien via la class TagView
+            let tagLink = new TagView(tag).createLink();
+
+            listItem.appendChild(tagLink);
+        });
+    }
+}
+
+class TagView extends HomeView
+{
+    constructor(tag)
+    {
+        super();
+        this.tag = tag;
+    }
+
+    createLink()
+    {
+        // Création du lien
+        let htmlLink = document.createElement("a");
+        
+        // Ajout d'une classe
+        htmlLink.classList.add("photographer-tag");
+
+        // Création du nom du lien
+        let htmlLinkName = document.createTextNode("#" + this.tag.name);
+
+        // Ajout du texte 
+        htmlLink.appendChild(htmlLinkName);
+
+        // Cible du lien (redirection)
+        htmlLink.href = "#";
+        
+        this.registerEvents(htmlLink);
+
+        return htmlLink;
+    }
+
+    registerEvents(htmlLink)
+    {
+        htmlLink.addEventListener('click', this.select);
+    }
+
+    select()
+    {
+        console.log("test");
+    }
+}
+
+
+
+
+
+
+/*class HomeView
+{
     //Permet d'afficher les tags dans la navbar sur la page d'accueil
     async tagsRender()
     {
@@ -178,3 +257,5 @@ class HomeView
 
 new HomeView().tagsRender();
 new HomeView().allPhotographersRender();
+
+*/
