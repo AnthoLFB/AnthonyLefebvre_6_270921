@@ -1,9 +1,9 @@
 class PhotographerView
 {
-    constructor(photographers)
+    constructor(eventDispatcher, photographers)
     {
         this.photographers = photographers;
-
+        this.eventDispatcher = eventDispatcher;
         this.createPhotographerElement();
     }
 
@@ -31,7 +31,7 @@ class PhotographerView
 
             let htmlSegment = 
             `
-                <a class="main__contenu__photographer-card__link" href="#">
+                <a class="main__contenu__photographer-card__link" href="photographer_page.html?id=${photographer.id}">
                     <img class="main__contenu__photographer-card__link__image" src="images/photographers/photographersProfilPicture/${photographer.portrait}" alt="Photo de profil pour le photographe :  ${photographer.name}"/>
                     <h2 class="main__contenu__photographer-card__link__title">${photographer.name}</h2>
                 </a>
@@ -55,7 +55,7 @@ class PhotographerView
                 article.appendChild(photographerTagList);
 
                 // Création d'un lien via la class TagView
-                let tagLink = new TagView("", tag);
+                let tagLink = new TagView(this.eventDispatcher, tag);
 
                 photographerTagList.appendChild(tagLink.element);
             });           
