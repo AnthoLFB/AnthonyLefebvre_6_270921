@@ -43,7 +43,7 @@ class HomeView
         //Vérification de la présence d'un tag selectionné dans le tableau de tag d'un photographe
         const photographers = this.app.photographers.filter((photographer) => selectedTags.filter((tag) => photographer.tags.includes(tag)).length > 0);
 
-        new PhotographerView(photographers);
+        new PhotographerView(this.app.eventDispatcher, photographers);
     }
 }
 
