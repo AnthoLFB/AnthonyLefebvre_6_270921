@@ -13,7 +13,7 @@ class PhotographerRepository extends DataRepository
                 photographer.tagline,
                 photographer.price, 
                 photographer.portrait
-        )));
+            )));
     }
 }
   
