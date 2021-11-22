@@ -3,13 +3,13 @@ class PhotographerProfilView
     constructor(photographer)
     {
         this.photographer = photographer;
+        this.removeElementsByClass("photographer__profil__identity");
+        this.removeElementsByClass("photographer__profil__identity__photo");
         this.createElement();
     }
 
     createElement()
-    {
-        console.log(this.photographer);
-
+    {        
         //Récupération du container
         let container = document.querySelector('.photographer__profil');
 
@@ -53,8 +53,16 @@ class PhotographerProfilView
                 <img src="images/photographers/photographersProfilPicture/${this.photographer.portrait}" alt="Photo de profil pour le photographe :  ${this.photographer.name}"/>
             `;
 
-            divPhoto.innerHTML = HtmlSegment;
+        divPhoto.innerHTML = HtmlSegment;
+    }
 
+    removeElementsByClass(className)
+    {
+        var elements = document.getElementsByClassName(className);
 
+        while(elements.length > 0)
+        {
+            elements[0].parentNode.removeChild(elements[0]);
+        }
     }
 }

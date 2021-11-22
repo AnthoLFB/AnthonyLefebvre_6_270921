@@ -1,14 +1,16 @@
 class Media
 {
-    constructor(id, photographerId, title, image, tags, likes, date, price)
+    constructor(media)
     {
-        this.id = id;
-        this.photographerId = photographerId;
-        this.title = title;
-        this.image = image;
-        this.tags = tags;
-        this.likes = likes;
-        this.date = date;
-        this.price = price;
+        this.media = media;
+        
+        if(this.media.image === undefined)
+        {
+            return new Video(this.media.id, this.media.photographerId, this.media.title, this.media.video, this.media.tags, this.media.likes, this.media.date, this.media.price);
+        }
+        else
+        {
+            return new Image(this.media.id, this.media.photographerId, this.media.title, this.media.image, this.media.tags, this.media.likes, this.media.date, this.media.price);
+        }
     }
 }
