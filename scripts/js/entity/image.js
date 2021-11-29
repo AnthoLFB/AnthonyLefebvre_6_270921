@@ -1,4 +1,4 @@
-class Image
+class ImageTEST
 {
     constructor(id, photographerId, title, image, tags, likes, date, price)
     {
