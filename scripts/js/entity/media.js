@@ -10,7 +10,7 @@ class Media
         }
         else
         {
-            return new Image(this.media.id, this.media.photographerId, this.media.title, this.media.image, this.media.tags, this.media.likes, this.media.date, this.media.price);
+            return new ImageTEST(this.media.id, this.media.photographerId, this.media.title, this.media.image, this.media.tags, this.media.likes, this.media.date, this.media.price);
         }
     }
 }
