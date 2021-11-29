@@ -5,10 +5,47 @@ class GalleryView
         this.medias = medias;
         this.photographer = photographer;
 
+        // Création de l'event sur la liste permettant de trier
+        const selectElement = document.querySelector('.photographer__media__sort__list');
+
+        selectElement.addEventListener('change', (event) => {
+            
+            this.render(event.target.value);
+        });
+
+        this.render();
+    }
+
+    render(filter)
+    {
+        // Triage du tableau en fonction de la valeur donnée
+        switch (filter) {
+        case 'title':
+            this.medias.sort(function(a, b){
+                if(a.title < b.title) { return -1; }
+                if(a.title > b.title) { return 1; }
+                return 0;
+            })
+            break;
+        case 'date':
+            this.medias.sort(function(a, b){
+                if(a.date < b.date) { return -1; }
+                if(a.date > b.date) { return 1; }
+                return 0;
+            })
+            break;
+        default:
+            this.medias.sort(function(a, b){
+                if(a.likes < b.likes) { return -1; }
+                if(a.likes > b.likes) { return 1; }
+                return 0;
+            })
+        }
+
         this.removeElementsByClass("photographer__media__card");
 
         this.medias.forEach(media => {
-            if(media.constructor.name == "Image")
+            if(media.constructor.name == "ImageTEST")
             {
                 this.createImageElement(media);
             }
@@ -17,6 +54,8 @@ class GalleryView
                 this.createVideoElement(media);
             }            
         });
+
+        Lightbox.init();
     }
 
     createImageElement(media)
@@ -37,7 +76,7 @@ class GalleryView
 
         let htmlSegment = 
             `
-                <a class="photographer__media__card__link" href="#"><img class="photographer__media__card__link__img" src="images/photographers/${this.photographer.name}/${media.image}"></a>
+                <a class="photographer__media__card__link" href="images/photographers/${this.photographer.name}/${media.image}"><img class="photographer__media__card__link__img" src="images/photographers/${this.photographer.name}/${media.image}"></a>
                 <p class="photographer__media__card__title">${media.title}</p>
                 <p class="photographer__media__card__likes">${media.likes}</p>
             `;
