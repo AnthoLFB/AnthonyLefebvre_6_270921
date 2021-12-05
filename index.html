@@ -4,13 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="scripts/css/accueil.css">
+        <!-- Chargement du CSS -->
+        <link rel="stylesheet" href="public/css/style.css">
         
         <title>FishEye</title>
     </head>
 
     <body>
-        <header>
+        <header class="header">
             <a class="header__link" href="index.html"><img class="header__link__image" src="images/fishEye.png" alt="Logo de l'entreprise FishEye"/></a>
             
             <nav class="header__navBar">
@@ -20,20 +21,16 @@
                 </ul>
             </nav>
 
-            <h1 class="hearder__title">Nos photographes</h1>
+            <h1 class="header__title">Nos photographes</h1>
         </header>
 
         <main>
-            <a class="top__link" href="#mainPhotographers">Passer au contenu</a>
-
             <section class="main__contenu">
-                <!-- Anchor -->
-                <div class="main__contenu__anchor" id="mainPhotographers"></div>
-
                 <!-- Récupération automatique des photographes via du JSON. Les photographes seront affichés ici, dans des articles -->
             </section>
         </main>
         
+        <!-- Chargement des scripts JS -->
         <script src="scripts/js/event_dispatcher/event.js"></script>
         <script src="scripts/js/event_dispatcher/eventDispatcher.js"></script>
 
@@ -48,11 +45,10 @@
         <script src="scripts/js/view/tag_view.js"></script>
         <script src="scripts/js/view/photographer_view.js"></script>
         <script src="scripts/js/entity/media.js"></script>
-        <script src="scripts/js/entity/image.js"></script>
+        <script src="scripts/js/entity/photo.js"></script>
         <script src="scripts/js/entity/video.js"></script>
         <script src="scripts/js/view/home_view.js"></script>
 
-        <script src="scripts/js/app.js"></script>
-        
+        <script src="scripts/js/app.js"></script>  
     </body>
 </html>
