@@ -75,7 +75,7 @@
     background: url(../../images/svg/loader.svg) center center / 100% 100% no-repeat;
 }
 
-.lightbox__container img
+.lightbox__container img, .lightbox__container video
 {
     max-width: 100%;
     height: auto;
