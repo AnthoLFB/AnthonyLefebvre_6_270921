@@ -1,0 +1,20 @@
+{
+  "name": "fisheye",
+  "version": "1.0.0",
+  "description": "Projet n°6 - Formation Openclassrooms",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./scripts/sass/main.scss:public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthoLFB/AnthonyLefebvre_6_270921.git"
+  },
+  "author": "Anthony LEFEBVRE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthoLFB/AnthonyLefebvre_6_270921/issues"
+  },
+  "homepage": "https://github.com/AnthoLFB/AnthonyLefebvre_6_270921#readme"
+}
