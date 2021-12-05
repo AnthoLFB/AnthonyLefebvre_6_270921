@@ -1,10 +1,11 @@
+//Vue concernant le profil du photographe
 class PhotographerProfilView
 {
     constructor(photographer)
     {
         this.photographer = photographer;
-        this.removeElementsByClass("photographer__profil__identity");
-        this.removeElementsByClass("photographer__profil__identity__photo");
+       
+        //Créé les éléments du DOM
         this.createElement();
     }
 
@@ -54,15 +55,5 @@ class PhotographerProfilView
             `;
 
         divPhoto.innerHTML = HtmlSegment;
-    }
-
-    removeElementsByClass(className)
-    {
-        var elements = document.getElementsByClassName(className);
-
-        while(elements.length > 0)
-        {
-            elements[0].parentNode.removeChild(elements[0]);
-        }
     }
 }

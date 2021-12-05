@@ -1,3 +1,4 @@
+//Permet de créer un objet Tag
 class Tag
 {
     constructor(name)

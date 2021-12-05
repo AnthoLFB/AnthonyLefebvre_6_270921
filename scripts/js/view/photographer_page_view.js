@@ -1,9 +1,14 @@
+//Vue globale
 class PhotographerPageView
 {
     constructor(app)
     {
         this.app = app;
+
+        //Fera référence à un photographe correspondant à un id
         this.photographer = null;
+
+        //Fera référence aux médias du photographe séléctionné
         this.photographerMedia = [];
 
         //On fait appel à searchParams
@@ -12,7 +17,7 @@ class PhotographerPageView
         // Récupère le paramètre nommé id dans l'url
         this.id = this.params.get('id');
 
-        //Récupération des info du photographe avec son id
+        //Récupération des infos du photographe avec son id
         this.app.photographers.forEach( photographer => {
 
             if(photographer.id == this.id)
@@ -28,8 +33,6 @@ class PhotographerPageView
                 this.photographerMedia.push(media);
             };
         });
-
-       
     } 
 
     render()

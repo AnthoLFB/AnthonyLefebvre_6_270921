@@ -1,4 +1,5 @@
-class ImageTEST
+//Permet de créer un objet photo
+class Photo
 {
     constructor(id, photographerId, title, image, tags, likes, date, price)
     {

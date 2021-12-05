@@ -2,10 +2,19 @@ class App
 {
     constructor()
     {
+        //Fera référence aux tags
         this.tags = [];
+
+        //Fera référence aux photographes
         this.photographers = [];
+
+        //Fera référence aux médias
         this.medias = [];
+
+        //Permettra d'appeler la vue selon l'url 
         this.view = null;
+
+        //Permettra de gérer les events sur les tags
         this.eventDispatcher = new EventDispatcher();
         this.eventDispatcher.register('tagSelected');
     }

@@ -1,16 +1,17 @@
+//Cette classe va permettre de créer un objet de type image ou vidéo
 class Media
 {
-    constructor(media)
+    static create(media)
     {
-        this.media = media;
-        
-        if(this.media.image === undefined)
+        //Retourne un objet Video si le champ "image" n'est pas présent dans la donnée JSON récupéré.
+        if(media.image === undefined)
         {
-            return new Video(this.media.id, this.media.photographerId, this.media.title, this.media.video, this.media.tags, this.media.likes, this.media.date, this.media.price);
+            return new Video(media.id, media.photographerId, media.title, media.video, media.tags, media.likes, media.date, media.price);
         }
+        //Retourne un objet de type Photo
         else
         {
-            return new ImageTEST(this.media.id, this.media.photographerId, this.media.title, this.media.image, this.media.tags, this.media.likes, this.media.date, this.media.price);
+            return new Photo(media.id, media.photographerId, media.title, media.image, media.tags, media.likes, media.date, media.price);
         }
     }
 }

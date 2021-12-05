@@ -11,44 +11,56 @@ class Lightbox
         document.addEventListener("keyup", this.controlWithKeyboard);
     }
 
-    static init()
-    {
-        const links = Array.from(document.querySelectorAll(".photographer__media__card__link"));
-        
-        const gallery = links.map(link => link.getAttribute("href"));
-
-        links.forEach(link =>
-            {
-                link.addEventListener("click", e =>{
-                    e.preventDefault();
-                    console.log(e.currentTarget.getAttribute("href"));
-                    console.log(new Lightbox(e.currentTarget.getAttribute("href"), gallery));
-                })
-            })
-    }
-
     loaderImg(url)
     {
+        //Permet de découper le lien afin de tester si c'est une image ou une vidéo
+        let mediaIdentification = url.split("/");     
+
+        //Récupère le nom du fichier et son extension
+        let mediaName = mediaIdentification[mediaIdentification.length - 1];
+
         this.url = null;
 
-        const image = new Image();
-
+        //Référence au container ou le média sera affiché dans la lightbox
         const container = this.domElement.querySelector(".lightbox__container")
+
+        //Création d'un loader qui sera affiché pendant le chargement de l'image
         const loader = document.createElement("div");
         loader.classList.add("lightbox__container__loader");
         container.innerHTML = "";
         container.appendChild(loader);
 
-        console.log(image);
+        //Si c'est une vidéo on créé les balises necessaires et on affiche le média
+        if(mediaName.includes(".mp4"))
+        {
+            const video = document.createElement("video");
+            const source = document.createElement("source");
+            video.appendChild(source);
 
-        image.onload = () =>{
-           container.removeChild(loader);
-           container.appendChild(image);
-           this.url = url;
+            video.onloadstart = () => {
+                container.removeChild(loader);
+                container.appendChild(video);
+                this.url = url;
+            }
+
+            video.controls = true;
+            video.autoplay = false;
+            source.setAttribute('src', url);
+            source.setAttribute('type', 'video/mp4');
         }
+        //Si c'est une image alors on créé les balises associées et on affiche le média
+        else
+        {
+            const image = new Image();
 
-        image.src = url;
-        image.alt = "Représentation d'une forêt";
+            image.onload = () => {
+                container.removeChild(loader);
+                container.appendChild(image);
+                this.url = url;
+            }
+
+            image.src = url;
+        }
     }
 
     controlWithKeyboard(e)
@@ -96,6 +108,8 @@ class Lightbox
 
     prev(e)
     {
+        e.preventDefault();
+        
         let currentPosition = this.gallery.findIndex(image => image == this.url);
 
         if(currentPosition == 0)
@@ -124,7 +138,6 @@ class Lightbox
         section.querySelector(".lightbox__close").addEventListener("click", this.close.bind(this));
         section.querySelector(".lightbox__next").addEventListener("click", this.next.bind(this));
         section.querySelector(".lightbox__prev").addEventListener("click", this.prev.bind(this));
-
 
         return section
     }

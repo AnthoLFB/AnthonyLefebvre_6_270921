@@ -1,9 +1,15 @@
+//Gère les tag sur la page d'accueil
 class TagView
 {
     constructor(eventDispatcher, tag)
     {
+        //Objet tag
         this.tag = tag;
+
+        //Gère les events
         this.eventDispatcher = eventDispatcher;
+
+        //Créer le lien avec le tag
         this.createTagLink();
     }
 
@@ -51,7 +57,7 @@ class TagView
         this.element.addEventListener('click', this.select.bind(this));
     }
 
-    //Modifie le tag 
+    //Modifie l'état du tag 
     select()
     {
         this.tag.selected = !this.tag.selected;

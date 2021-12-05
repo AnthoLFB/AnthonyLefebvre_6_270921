@@ -1,3 +1,4 @@
+//Permet de créer un objet Vidéo
 class Video
 {
     constructor(id, photographerId, title, video, tags, likes, date, price)

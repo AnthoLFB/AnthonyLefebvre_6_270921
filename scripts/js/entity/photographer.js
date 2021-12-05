@@ -1,3 +1,4 @@
+//Permet de créer un objet Photographe
 class Photographer
 {
     constructor(name, id, city, country, tags, tagline, price, portrait)

@@ -4,8 +4,6 @@ class HomeView
     {
         this.app = app;
 
-        console.log(this.app);
-
         this.createTagList();
 
         this.app.eventDispatcher.addEventListener('tagSelected', this.render.bind(this));
