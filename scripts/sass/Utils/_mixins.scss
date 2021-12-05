@@ -1,0 +1,5 @@
+/* Affichage de l'ombre sur les elements */
+@mixin boxShadow($color: $tertiary-color) 
+{
+    box-shadow: 4px 6px 12px $color;
+}
