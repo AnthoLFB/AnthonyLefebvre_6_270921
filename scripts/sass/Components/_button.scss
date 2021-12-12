@@ -1,0 +1,18 @@
+.photographer__profil__contact__button
+{
+    font-weight: bold;
+
+    padding: 1em;
+
+    border: none;
+    border-radius: 0.25em;
+
+    background-color: $primary-color;
+    color: #ffffff;
+
+    &:hover
+    {
+        color: #000000;
+        background-color: lighten($secondary-color, 10%);
+    }
+}

@@ -1,0 +1,116 @@
+.noScroll
+{
+    overflow-y: hidden;
+}
+
+.form
+{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+
+    background-color: rgba(0 ,0 , 0, 0.3);
+
+    display: none;
+
+    @include xxlargeScreen
+    {
+        width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+.contact-form
+{
+    width: 50%;
+    background-color: lighten($secondary-color, 10%);
+
+    @include largeScreen
+    {
+        width: 70%;
+    }
+
+    @include mediumScreen
+    {
+        width: 80%;
+    }
+
+    &__content
+    {
+        position: relative;
+        width: 100%;
+
+        &__header, &__field
+        {
+            width: calc(100% - 2em);
+            margin: 1em;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5em;
+        }
+        &__header
+        {
+            &__title
+            {
+                font-size: 2.8em;
+
+                @include smallScreen
+                {
+                    margin-top: 1em;
+                    font-size: 1em;
+                }
+
+            }
+
+            &__close
+            {
+                border: none;
+                width: 50px;
+                height: 100px;
+                background: url(../../images/svg/whiteCross.svg) center center / 100% 100% no-repeat transparent;
+            }
+        }
+
+        &__field
+        {
+            flex-direction: column;
+
+            &__label
+            {
+                margin-bottom: 0.2em;
+            }
+
+            &__input
+            {
+                border: none;
+                border-radius: 5px;
+            }
+
+            &__input[type=text], &__input[type=email]
+            {
+                height: 50px;
+            }
+
+            &__btn
+            {
+                width: 30%;
+                border: none;
+                border-radius: 5px;
+                color: #FFFFFF;
+                background-color: $primary-color;
+                padding: 1em;
+
+                @include mediumScreen
+                {
+                    width: auto;
+                }
+            }
+        }
+    }
+}

@@ -5,14 +5,24 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+
+    @include largeScreen
+    {
+        margin-top: 90px;
+    }
     
 
     &__photographer-card
     {
+        width: calc(400px - 2em);
         margin: 4em 1em;
-        width: calc(33% - 2em);
         background-color: #FFFFFF;
         text-align: center;
+
+        @include largeScreen
+        {
+            width: calc(300px - 2em);
+        }
 
         &__link
         {
@@ -21,8 +31,8 @@
             
             &__image
             {
-                width: 350px;
-                height: 350px;
+                width: 200px;
+                height: 200px;
                 object-fit: cover;
                 border-radius: 50%;
                 @include boxShadow(lighten($tertiary-color, 50%));
@@ -31,7 +41,7 @@
             &__title
             {
                 margin-top: 1em;
-                font-size: 3em;
+                font-size: 2em;
                 color: $secondary-color;
             }
         }
@@ -64,7 +74,7 @@
 
             &__item
             {
-                margin-right: 1em;
+                margin: 0.5em;
             }
         }
 
