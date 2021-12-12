@@ -40,6 +40,9 @@ class PhotographerPageView
         //Fais appel à la classe pour afficher le photographe
         new PhotographerProfilView(this.photographer);
 
+        //Fais appel à la classe pour créer le formulaire de contacte
+        new contactForm(this.photographer);
+
         //Création de la vue avec les médias du photographe ainsi que ses données personnelles
         new GalleryView(this.photographerMedia, this.photographer);
     }
