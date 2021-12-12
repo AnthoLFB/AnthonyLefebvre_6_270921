@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Chargement du CSS -->
+        <link rel="stylesheet" href="scripts/css/photographer-page.css">
+
+        <link rel="stylesheet" href="scripts/css/lightbox.css">      
+        
+        <title>FishEye - Photographe</title>
+    </head>
+
+    <body>
+        <header>
+            <a class="header__link" href="index.html"><img class="header__link__image" src="images/fishEye.png" alt="Logo de l'entreprise FishEye"/></a>
+        </header>
+
+        <main>
+            <section class="photographer__profil">
+                <!-- Remplissage automatique de la section avec le contenu du photographe correspondant à l'id en URL -->
+
+                <div class="photographer__profil__contact">
+                    <button class="photographer__profil__contact__button" type="button">Contactez-moi</button>
+                </div>
+            </section>
+
+            <section class="photographer__media">
+                <!-- Remplissage automatique de la section avec les médias du photographe -->
+                <div class="photographer__media__sort">
+                    <p class="photographer__media__sort__title">Trier par : </p>
+                
+                    <select class="photographer__media__sort__list" name="sort" id="sort-name">
+                        <option value="likes">Popularité</option>
+                        <option value="date">Date</option>
+                        <option value="title">Titre</option>
+                    </select>
+                </div>
+            </section>
+        </main>
+    
+         <!-- Chargement des scripts -->
+
+        <script src="scripts/js/event_dispatcher/event.js"></script>
+        <script src="scripts/js/event_dispatcher/eventDispatcher.js"></script>
+
+        <script src="scripts/js/data_processing/data_repository.js"></script>
+        <script src="scripts/js/data_processing/photographer_repository.js"></script>
+        <script src="scripts/js/data_processing/media_repository.js"></script>
+
+        <script src="scripts/js/entity/photographer.js"></script>
+        <script src="scripts/js/entity/tag.js"></script>
+        <script src="scripts/js/entity/media.js"></script>
+        <script src="scripts/js/entity/photo.js"></script>
+        <script src="scripts/js/entity/video.js"></script>
+
+        <script src="scripts/js/view/photographer_page_view.js"></script>
+        <script src="scripts/js/view/photographer_profil_view.js"></script>
+        <script src="scripts/js/view/lightbox.js"></script>
+        <script src="scripts/js/view/gallery_view.js"></script>
+
+        <script src="scripts/js/app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+/* Section */
+.lightbox
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10;
+    animation: lightBoxIn 0.5s;
+    transition: 0.3s; /* Disparition */
+
+    /* Scroll*/
+    overflow: auto;
+}
+
+/* Fermeture */
+.lightbox.fadeOut
+{
+    opacity: 0;
+}
+
+/* Boutons */
+.lightbox button
+{
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.lightbox button:hover
+{
+    opacity: 1;
+}
+
+.lightbox__prev, .lightbox__next
+{
+    border: none;
+    background: url(../../images/svg/arrow.svg) center center / 16px 28px no-repeat;
+    width: 75px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 11;
+}
+
+.lightbox__prev
+{
+    right: auto;
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.lightbox__close
+{
+    border: none;
+    width: 25px;
+    height: 55px;
+    background: url(../../images/svg/cross.svg) center center / 100% 100% no-repeat transparent;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 12;
+}
+
+/* Image */
+
+.lightbox__container__loader
+{
+    width: 38px;
+    height: 38px;
+    opacity: 0.5;
+    background: url(../../images/svg/loader.svg) center center / 100% 100% no-repeat;
+}
+
+.lightbox__container img, .lightbox__container video
+{
+    max-width: 100%;
+    height: auto;
+    animation: lightBoxIn 0.5s;
+}
+
+.lightbox__container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    margin: 0 75px; /* Espace pour les boutons (donc = à leur taille) */
+}
+
+@keyframes lightBoxIn
+{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}

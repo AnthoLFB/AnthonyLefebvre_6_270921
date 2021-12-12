@@ -1,0 +1,72 @@
+.main__contenu
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
+    &__photographer-card
+    {
+        margin: 4em 1em;
+        width: calc(33% - 2em);
+        background-color: #FFFFFF;
+        text-align: center;
+
+        &__link
+        {
+            cursor: pointer;
+            text-decoration: none;
+            
+            &__image
+            {
+                width: 350px;
+                height: 350px;
+                object-fit: cover;
+                border-radius: 50%;
+                @include boxShadow(lighten($tertiary-color, 50%));
+            }
+
+            &__title
+            {
+                margin-top: 1em;
+                font-size: 3em;
+                color: $secondary-color;
+            }
+        }
+
+        &__localisation, &__catchphrase, &__price, &__tag-list
+        {
+            font-size: 1em;
+            margin-top: 0.5em;
+            color: #000000;
+        }
+
+        &__localisation
+        {
+            color: $primary-color;
+            font-weight: bold;
+        }
+
+        &__price
+        {
+            color: $tertiary-color;
+        }
+
+        &__tag-list
+        {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            &__item
+            {
+                margin-right: 1em;
+            }
+        }
+
+    }
+}

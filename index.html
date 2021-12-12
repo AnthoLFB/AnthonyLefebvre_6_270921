@@ -3,11 +3,52 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Chargement du CSS -->
+        <link rel="stylesheet" href="public/css/style.css">
         
         <title>FishEye</title>
     </head>
 
     <body>
+        <header class="header">
+            <a class="header__link" href="index.html"><img class="header__link__image" src="images/fishEye.png" alt="Logo de l'entreprise FishEye"/></a>
+            
+            <nav class="header__navBar">
 
+                <ul class="header__navBar__list">
+                    <!-- Récupération automatique des tags via du JSON. Les tags seront affichés ici sous forme de lien -->
+                </ul>
+            </nav>
+
+            <h1 class="header__title">Nos photographes</h1>
+        </header>
+
+        <main>
+            <section class="main__contenu">
+                <!-- Récupération automatique des photographes via du JSON. Les photographes seront affichés ici, dans des articles -->
+            </section>
+        </main>
+        
+        <!-- Chargement des scripts JS -->
+        <script src="scripts/js/event_dispatcher/event.js"></script>
+        <script src="scripts/js/event_dispatcher/eventDispatcher.js"></script>
+
+        <script src="scripts/js/entity/photographer.js"></script>
+        <script src="scripts/js/entity/tag.js"></script>
+
+        <script src="scripts/js/data_processing/data_repository.js"></script>
+        <script src="scripts/js/data_processing/photographer_repository.js"></script>
+        <script src="scripts/js/data_processing/media_repository.js"></script>
+
+        
+        <script src="scripts/js/view/tag_view.js"></script>
+        <script src="scripts/js/view/photographer_view.js"></script>
+        <script src="scripts/js/entity/media.js"></script>
+        <script src="scripts/js/entity/photo.js"></script>
+        <script src="scripts/js/entity/video.js"></script>
+        <script src="scripts/js/view/home_view.js"></script>
+
+        <script src="scripts/js/app.js"></script>  
     </body>
 </html>
