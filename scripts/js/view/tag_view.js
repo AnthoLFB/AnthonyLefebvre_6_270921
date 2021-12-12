@@ -20,7 +20,7 @@ class TagView
         this.element = document.createElement("a");
 
         // Ajout d'une classe
-        this.element.classList.add("photographer-tag");
+        this.element.classList.add("photographer_tag");
 
         // Création du nom du lien
         let htmlLinkName = document.createTextNode("#" + this.tag.name);
@@ -43,11 +43,11 @@ class TagView
     {
         if(this.tag.selected)
         {
-            this.element.style.background = "yellow";
+            this.element.classList.add("photographer_tag--selected");
         } 
         else
         {
-            this.element.style.background = "red";
+            this.element.classList.remove("photographer_tag--selected");
         }
     }
 
