@@ -1,0 +1,41 @@
+.infos-box
+{
+    position: sticky;
+    bottom: 0;
+
+    background-color: lighten($secondary-color, 10%);
+    width: 250px;
+
+    margin-right: 2.5em;
+    margin-left: auto;
+
+    text-align: center;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    padding: 1em;
+
+    
+    &__container
+    {
+        width: 100%;
+
+        font-size: 1.5em;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        & p
+        {
+            margin: 0 0.5em;
+        }
+    }
+}
+
+   
+    
+
+

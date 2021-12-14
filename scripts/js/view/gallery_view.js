@@ -18,6 +18,8 @@ class GalleryView
 
         //Déclanche le render au chargement de la page
         this.render();
+
+        this.countTotalLikes();
     }
 
     //Fonction permettant d'afficher le contenu dynamique
@@ -102,13 +104,17 @@ class GalleryView
         //Création des éléments HTML
         let htmlSegment = 
             `
-                <a class="photographer__media__card__link" href="images/photographers/${this.photographer.name}/${media.image}"><img class="photographer__media__card__link__img" src="images/photographers/${this.photographer.name}/${media.image}"></a>
-                <p class="photographer__media__card__title">${media.title}</p>
-                <p class="photographer__media__card__likes">${media.likes}</p>
+                <a class="photographer__media__card__link" href="images/photographers/${this.photographer.name}/${media.image}"><img class="photographer__media__card__link__img" src="images/photographers/${this.photographer.name}/${media.image}" alt="Photographie réalisée par ${this.photographer.name}"></a>
+                <div class="photographer__media__card__infos">
+                    <p class="photographer__media__card__infos__title">${media.title} </p>
+                    <p class="photographer__media__card__infos__likes"><span class="photographer__media__card__infos__likes__number">${media.likes}</span> </p>
+                </div>
             `;
 
         //Ajout des éléments HTML    
         article.innerHTML = htmlSegment;
+
+        this.createLikeBtn(article);
     }
         
 
@@ -132,17 +138,19 @@ class GalleryView
         let htmlSegment = 
             `
                 <a class="photographer__media__card__link" href="images/photographers/${this.photographer.name}/${media.video}">
-                    <video preload="metadata">                
+                    <video class="photographer__media__card__link__video" preload="metadata">                
                         <source src="images/photographers/${this.photographer.name}/${media.video}#t=0.5" type="video/mp4">
                     </video>
                 </a>
-               
-                <p class="photographer__media__card__title">${media.title}</p>
-                <p class="photographer__media__card__likes">${media.likes}</p>
+                <div class="photographer__media__card__infos">
+                    <p class="photographer__media__card__infos__title">${media.title}</p>
+                    <p class="photographer__media__card__infos__likes"><span class="photographer__media__card__infos__likes__number">${media.likes}</span> </p>
+                </div>
             `;
-
         //Ajout des éléments HTML
         article.innerHTML = htmlSegment;
+
+        this.createLikeBtn(article);
     }
 
     //Permet de retirer les éléments du DOM avec une classe spécifiée
@@ -157,4 +165,62 @@ class GalleryView
             elements[0].parentNode.removeChild(elements[0]);
         }
     }
+
+    createLikeBtn(article)
+    {
+        let container = article.querySelector('.photographer__media__card__infos__likes');
+
+        // Création de l'icone
+        let spanElement = document.createElement("span");
+
+        // Ajout d'une classe
+        spanElement.classList.add("photographer__media__card__infos__likes__heart-logo");
+        
+        spanElement.addEventListener('click', this.likeMedia.bind(this, article));
+        
+        spanElement.innerHTML = '<i class="far fa-heart"></i>';
+
+        container.appendChild(spanElement);
+    }
+
+    likeMedia(article)
+    {
+        let likeNumber = article.querySelector(".photographer__media__card__infos__likes__number").textContent;
+        let heartIcon = article.querySelector(".photographer__media__card__infos__likes__heart-logo");
+
+        if(heartIcon.classList.contains("photographer__media__card__infos__likes__heart-logo--liked"))
+        {
+            // -1 (si la classe existe alors on enlève un like)
+            let likes = parseInt(likeNumber, 10);
+            likes --;
+            article.querySelector(".photographer__media__card__infos__likes__number").innerHTML = likes;
+            heartIcon.classList.remove("photographer__media__card__infos__likes__heart-logo--liked");
+
+            this.countTotalLikes();
+        }
+        else
+        {
+            // +1 (si la classe n'existe pas alors on ajoute un like)
+            let likes = parseInt(likeNumber, 10);
+            likes ++;
+            article.querySelector(".photographer__media__card__infos__likes__number").innerHTML = likes;
+            heartIcon.classList.add("photographer__media__card__infos__likes__heart-logo--liked");
+
+            this.countTotalLikes();
+        }
+    }
+
+    countTotalLikes()
+    {
+        let likes = document.querySelectorAll(".photographer__media__card__infos__likes__number");
+        let totalNumber = 0;
+        likes.forEach(likeNumber => {
+            let test = parseInt(likeNumber.textContent, 10);
+            totalNumber = totalNumber + test;
+        });
+
+        let container = document.querySelector(".infos__container__totalLikes__number");
+        container.innerHTML = totalNumber;
+    }
 }
+

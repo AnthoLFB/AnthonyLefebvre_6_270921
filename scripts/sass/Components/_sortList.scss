@@ -1,0 +1,22 @@
+.photographer__media__sort
+{
+    width: calc(100% - 4em);
+
+    margin: 2em 0;
+
+    &__title
+    {
+        font-weight: bold;
+        margin-right: 2em;
+    }
+
+    &__list
+    {
+        padding: 1em;
+
+        border-radius: 0.25em;
+
+        background-color: $primary-color;
+        color: #FFFFFF;
+    }
+}

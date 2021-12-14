@@ -4,6 +4,9 @@ class PhotographerProfilView
     constructor(photographer)
     {
         this.photographer = photographer;
+
+        let container = document.querySelector(".infos__container__price");
+        container.innerHTML = photographer.price + "€/jour";
        
         //Créé les éléments du DOM
         this.createElement();
@@ -51,7 +54,7 @@ class PhotographerProfilView
 
         let HtmlSegment = 
             `
-                <img src="images/photographers/photographersProfilPicture/${this.photographer.portrait}" alt="Photo de profil pour le photographe :  ${this.photographer.name}"/>
+                <img class="photographer__profil__identity__photo__image" src="images/photographers/photographersProfilPicture/${this.photographer.portrait}" alt="Photo de profil pour le photographe :  ${this.photographer.name}"/>
             `;
 
         divPhoto.innerHTML = HtmlSegment;

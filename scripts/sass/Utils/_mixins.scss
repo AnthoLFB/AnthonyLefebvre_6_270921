@@ -3,3 +3,59 @@
 {
     box-shadow: 4px 6px 12px $color;
 }
+
+/*---- Responsive ----*/
+
+/* Ecran de taille inférieur a 576px */
+@mixin smallScreen 
+{
+    @media screen and (max-width: map-get($responsive-breakpoints, small))
+    {
+        @content;
+    }
+}
+
+/* Ecran de taille inférieur a 768px */
+@mixin mediumScreen 
+{
+    @media screen and (max-width: map-get($responsive-breakpoints, medium))
+    {
+        @content;
+    }
+}
+
+/* Ecran de taille inférieur a 992px */
+@mixin largeScreen
+{
+    @media screen and (max-width: map-get($responsive-breakpoints, large))
+    {
+        @content;
+    }
+}
+
+/* Ecran de taille inférieur a 1200px */
+@mixin xlargeScreen
+{
+    @media screen and (max-width: map-get($responsive-breakpoints, xlarge))
+    {
+        @content;
+    }
+}
+
+/* Ecran de taille supérieur a 1400px */
+@mixin xxlargeScreen
+{
+    @media screen and (min-width: map-get($responsive-breakpoints, xxlarge))
+    {
+        @content;
+    }
+}
+
+/* Ecran de taille supérieur a 2560px */
+@mixin ultraWideScreen
+{
+    @media screen and (min-width: map-get($responsive-breakpoints, ultrawide))
+    {
+        @content;
+    }
+}

@@ -1,0 +1,83 @@
+.photographer__profil
+{
+    background-color: $light-grey;
+    width: calc(100% - 4em);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    margin: 2em;
+    padding: 2em 0; 
+
+    border-radius: 0.5em;
+
+    @include mediumScreen
+    {
+        flex-direction: column-reverse;
+        width: calc(100% - 2em);
+        margin: 1em;
+    }
+
+
+    &__identity, &__contact, &__identity__photo
+    {
+        width: 30%;
+        text-align: center;
+
+        @include mediumScreen
+        {
+            width: 100%;
+            margin-top: 1em;
+        }
+    }
+
+    &__identity
+    {
+        text-align: left;
+
+        @include mediumScreen
+        {
+           text-align: center;
+        }
+
+        &__localisation, &__catchphrase
+        {
+            margin-top: 0.75em;
+        }
+        
+        &__name
+        {
+            font-size: 3em;
+
+            color: $secondary-color;
+        }
+
+        &__localisation
+        {
+            font-size: 1.5em;
+            
+            color: $primary-color;
+        }
+
+        &__catchphrase
+        {
+            font-size: 1em;
+            color: $tertiary-color;
+        }
+    }
+
+    &__identity__photo
+    {
+        &__image
+        {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            @include boxShadow(lighten($tertiary-color, 50%));
+        }
+    }
+
+}

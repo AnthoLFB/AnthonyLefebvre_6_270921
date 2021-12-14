@@ -5,6 +5,8 @@
 /* --- Import des fondations du site --- */
 /* Reset CSS */
 @import "./Base/reset";
+/* Responsive (limite de taille) grands écrans */
+@import "./Base/maxWidth";
 
 /* --- Import des composants --- */
 
@@ -12,6 +14,20 @@
 @import "./Components/tag";
 /* Style de base des articles */
 @import "./Components/photographerCard";
+/* Style de base du profil du photographe */
+@import "./Components/photographerProfil";
+/* Style de base des boutons affichés sur le profil du photographe */
+@import "./Components/button";
+/* Style de base des listes de tri */
+@import "./Components/sortList";
+/* Style de base des médias */
+@import "./Components/photoContainer";
+/* Style de base de la lightbox */
+@import "./Components/lightbox";
+/* Style de base du formulaire */
+@import "./Components/contactForm";
+/* Style de base du formulaire */
+@import "./Components/infosSection";
 
 
 /*  --- Blocs réutilisables --- */

@@ -1,0 +1,20 @@
+.photographer_tag
+{
+    border: Solid 1px $tertiary-color;
+    border-radius: 1em;
+    padding: 0.3em;
+
+    text-decoration: none;
+    color: $primary-color;
+
+    &:hover
+    {
+        border: Solid 2px $primary-color; 
+    }
+
+    &--selected
+    {
+        background-color: $primary-color;
+        color: #FFFFFF
+    }
+}
