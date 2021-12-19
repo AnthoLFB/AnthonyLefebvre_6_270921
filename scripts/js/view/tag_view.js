@@ -22,6 +22,9 @@ class TagView
         // Ajout d'une classe
         this.element.classList.add("photographer_tag");
 
+        //Accessibilité
+        this.element.setAttribute("aria-label", "Afficher les photographes qui propose le contenu : " + this.tag.name + ".");
+
         // Création du nom du lien
         let htmlLinkName = document.createTextNode("#" + this.tag.name);
 

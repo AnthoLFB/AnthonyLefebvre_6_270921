@@ -104,10 +104,10 @@ class GalleryView
         //Création des éléments HTML
         let htmlSegment = 
             `
-                <a class="photographer__media__card__link" href="images/photographers/${this.photographer.name}/${media.image}"><img class="photographer__media__card__link__img" src="images/photographers/${this.photographer.name}/${media.image}" alt="Photographie réalisée par ${this.photographer.name}"></a>
+                <a class="photographer__media__card__link" href="images/photographers/${this.photographer.name}/${media.image}"><img class="photographer__media__card__link__img" src="images/photographers/${this.photographer.name}/${media.image}" alt="Photographie réalisée par ${this.photographer.name}. cliquez pour agrandir"></a>
                 <div class="photographer__media__card__infos">
                     <p class="photographer__media__card__infos__title">${media.title} </p>
-                    <p class="photographer__media__card__infos__likes"><span class="photographer__media__card__infos__likes__number">${media.likes}</span> </p>
+                    <p class="photographer__media__card__infos__likes"><span aria-label="nombre de likes pour cette vidéo :" class="photographer__media__card__infos__likes__number">${media.likes}</span> </p>
                 </div>
             `;
 
@@ -144,7 +144,7 @@ class GalleryView
                 </a>
                 <div class="photographer__media__card__infos">
                     <p class="photographer__media__card__infos__title">${media.title}</p>
-                    <p class="photographer__media__card__infos__likes"><span class="photographer__media__card__infos__likes__number">${media.likes}</span> </p>
+                    <p class="photographer__media__card__infos__likes"><span aria-label="nombre de likes pour cette vidéo :" class="photographer__media__card__infos__likes__number">${media.likes}</span> </p>
                 </div>
             `;
         //Ajout des éléments HTML
@@ -178,7 +178,7 @@ class GalleryView
         
         spanElement.addEventListener('click', this.likeMedia.bind(this, article));
         
-        spanElement.innerHTML = '<i class="far fa-heart"></i>';
+        spanElement.innerHTML = '<i class="far fa-heart" title="ajouter un likes"></i>';
 
         container.appendChild(spanElement);
     }

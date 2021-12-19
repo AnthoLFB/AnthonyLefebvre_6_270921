@@ -38,8 +38,8 @@ class PhotographerView
 
             let htmlSegment = 
             `
-                <a class="main__contenu__photographer-card__link" href="photographer_page.html?id=${photographer.id}">
-                    <img class="main__contenu__photographer-card__link__image" src="images/photographers/photographersProfilPicture/${photographer.portrait}" alt="Photo de profil pour le photographe :  ${photographer.name}"/>
+                <a aria-label="Lien permettant d'afficher la page contenant le profil, les informations et les différents médias de ${photographer.name}." class="main__contenu__photographer-card__link" href="photographer_page.html?id=${photographer.id}">
+                    <img class="main__contenu__photographer-card__link__image" src="images/photographers/photographersProfilPicture/${photographer.portrait}" alt="Portrait de  ${photographer.name}. Lien permettant d'accéder au profil de ${photographer.name}."/>
                     <h2 class="main__contenu__photographer-card__link__title">${photographer.name}</h2>
                 </a>
 
@@ -54,7 +54,9 @@ class PhotographerView
             let photographerTagList = document.createElement("ul");
 
             //Ajout de la classe
-            photographerTagList.classList.add("main__contenu__photographer-card__tag-list")
+            photographerTagList.classList.add("main__contenu__photographer-card__tag-list");
+
+            photographerTagList.setAttribute("aria-label", "Navigation secondaire. Vous pouvez filtrer les photographes selon le contenu qu'ils produisent en cliquant sur l'un des items suivants.");
 
             article.appendChild(photographerTagList);
 
@@ -65,7 +67,7 @@ class PhotographerView
                 let photographerTagListItem = document.createElement("li");
 
                 //Ajout de la classe
-                photographerTagListItem.classList.add("main__contenu__photographer-card__tag-list__item")
+                photographerTagListItem.classList.add("main__contenu__photographer-card__tag-list__item");
 
                 photographerTagList.appendChild(photographerTagListItem);
 

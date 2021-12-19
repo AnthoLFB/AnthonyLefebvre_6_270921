@@ -11,20 +11,21 @@
     </head>
 
     <body>
-        <header class="header">
-            <a class="header__link" href="index.html"><img class="header__link__image" src="images/fishEye.png" alt="Logo de l'entreprise FishEye"/></a>
+        <header class="header" role="banner">
+            <a aria-label="Logo de l'entreprise FishEye. En cliquant sur cette image, vous serez redirigez vers la page d'accueil du site." class="header__link" href="index.html">
+                <img role="img" class="header__link__image" src="images/fishEye.png" alt="Logo de l'entreprise FishEye. Lien vers la page d'accueil"/>
+            </a>
             
-            <nav class="header__navBar">
-
+            <nav role="navigation" class="header__navBar" aria-label="Navigation principale. Vous pouvez filtrer les photographes selon le contenu qu'ils produisent.">
                 <ul class="header__navBar__list">
                     <!-- Récupération automatique des tags via du JSON. Les tags seront affichés ici sous forme de lien -->
                 </ul>
             </nav>
 
-            <h1 class="header__title">Nos photographes</h1>
+            <h1 role="heading" aria-level="1" class="header__title">Nos photographes</h1>
         </header>
 
-        <main>
+        <main role="main">
             <section class="main__contenu">
                 <!-- Récupération automatique des photographes via du JSON. Les photographes seront affichés ici, dans des articles -->
             </section>
