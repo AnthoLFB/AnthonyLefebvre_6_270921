@@ -25,6 +25,9 @@ class contactForm
         const modal = document.getElementById("form");
         modal.style.display = "flex";
         document.body.classList.add("noScroll");
+        
+        //focus sur le formulaire lors de l'ouverture
+        document.querySelector(".contact-form__content__field__input").focus();
     }
     
     closeModal() {
@@ -45,6 +48,8 @@ class contactForm
         let string = "Vous avez un nouvel email de " + firstname + " " + lastname + ". Cet email est envoyé depuis l'adresse suivante : " + email + ". Voici le contenu du message :  " + message; 
 
         console.log(string);
+
+        this.closeModal();
     }
     
 }
