@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
 //Cette classe va permettre de créer un objet de type image ou vidéo
 class Media
 {

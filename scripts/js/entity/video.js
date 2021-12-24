@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 //Permet de créer un objet Vidéo
 class Video
 {

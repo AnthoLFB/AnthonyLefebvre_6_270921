@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 class Lightbox
 {
 
@@ -137,7 +138,7 @@ class Lightbox
         this.loaderImg(this.gallery[currentPosition - 1]);
     }
 
-    buildDomElement(url)
+    buildDomElement()
     {
         const section = document.createElement("section");
         section.classList.add("lightbox");

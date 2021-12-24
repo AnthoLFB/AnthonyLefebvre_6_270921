@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+
+//Classe pricipale qui sert au lancement de l'application
 class App
 {
     constructor()

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 //Gère les tag sur la page d'accueil
 class TagView
 {

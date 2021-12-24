@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
 //Cette classe permet de récupérer les différents photographes
 class PhotographerRepository extends DataRepository 
 {

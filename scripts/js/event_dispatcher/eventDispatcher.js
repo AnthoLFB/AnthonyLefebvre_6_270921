@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 //Permet de gérer les event
 class EventDispatcher 
 {

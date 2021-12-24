@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 //Vue globale
 class PhotographerPageView
 {
@@ -31,7 +33,7 @@ class PhotographerPageView
             if(media.photographerId == this.id)
             {
                 this.photographerMedia.push(media);
-            };
+            }
         });
     } 
 

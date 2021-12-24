@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 //Vue permettant d'afficher les photographes sur la page d'accueil
 class PhotographerView
 {

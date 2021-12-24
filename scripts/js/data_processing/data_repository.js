@@ -1,4 +1,5 @@
 // Cette classe permet de récupérer des données via un fichier JSON donné
+// eslint-disable-next-line no-unused-vars
 class DataRepository
 {
     constructor(jsonFileName)

@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-redeclare */
+
 //Permet de créer un objet Event
 class Event 
 {
