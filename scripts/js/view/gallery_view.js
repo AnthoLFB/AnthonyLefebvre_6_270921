@@ -75,12 +75,21 @@ class GalleryView
         //Récupération des liens des images
         const gallery = links.map(link => link.getAttribute("href"));
 
+        //Récupération de la section ccontenant les medias
+        const mediaArea = document.querySelector(".photographer__media");
+
+        //Récupération des balises titres des images
+        const imagesTitle = Array.from(mediaArea.querySelectorAll(".photographer__media__card__infos__title"));
+
+        //Récupération des noms des images
+        const imagesName = imagesTitle.map(imagesTitle => imagesTitle.textContent);
+
         //Initialisation de la lightbox
         links.forEach(link =>
             {
                 link.addEventListener("click", e =>{
                     e.preventDefault();
-                    new Lightbox(e.currentTarget.getAttribute("href"), gallery);
+                    new Lightbox(e.currentTarget.getAttribute("href"), gallery, imagesName);
                 })
             })
     }
@@ -106,7 +115,7 @@ class GalleryView
             `
                 <a class="photographer__media__card__link" href="images/photographers/${this.photographer.name}/${media.image}"><img class="photographer__media__card__link__img" src="images/photographers/${this.photographer.name}/${media.image}" alt="Photographie réalisée par ${this.photographer.name}. cliquez pour agrandir"></a>
                 <div class="photographer__media__card__infos">
-                    <p class="photographer__media__card__infos__title">${media.title} </p>
+                    <h2 class="photographer__media__card__infos__title">${media.title}</h2>
                     <p class="photographer__media__card__infos__likes"><span aria-label="nombre de likes pour cette vidéo :" class="photographer__media__card__infos__likes__number">${media.likes}</span> </p>
                 </div>
             `;
@@ -137,14 +146,14 @@ class GalleryView
         //Création des éléments HTML
         let htmlSegment = 
             `
-                <a class="photographer__media__card__link" href="images/photographers/${this.photographer.name}/${media.video}">
+                <a aria-label="Vidéo réalisée par ${this.photographer.name}. Cliquez pour voir." class="photographer__media__card__link" href="images/photographers/${this.photographer.name}/${media.video}">
                     <video class="photographer__media__card__link__video" preload="metadata">                
                         <source src="images/photographers/${this.photographer.name}/${media.video}#t=0.5" type="video/mp4">
                     </video>
                 </a>
                 <div class="photographer__media__card__infos">
-                    <p class="photographer__media__card__infos__title">${media.title}</p>
-                    <p class="photographer__media__card__infos__likes"><span aria-label="nombre de likes pour cette vidéo :" class="photographer__media__card__infos__likes__number">${media.likes}</span> </p>
+                    <h2 class="photographer__media__card__infos__title">${media.title}</h2>
+                    <p class="photographer__media__card__infos__likes"><span aria-label="nombre de j'aime pour cette photo :" class="photographer__media__card__infos__likes__number">${media.likes}</span> </p>
                 </div>
             `;
         //Ajout des éléments HTML
@@ -175,10 +184,12 @@ class GalleryView
 
         // Ajout d'une classe
         spanElement.classList.add("photographer__media__card__infos__likes__heart-logo");
+
+        spanElement.setAttribute("role", "button");
         
         spanElement.addEventListener('click', this.likeMedia.bind(this, article));
         
-        spanElement.innerHTML = '<i class="far fa-heart" title="ajouter un likes"></i>';
+        spanElement.innerHTML = `<i class="far fa-heart" title="ajouter un j'aime à cette photo"></i>`;
 
         container.appendChild(spanElement);
     }
