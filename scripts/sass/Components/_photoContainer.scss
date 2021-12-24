@@ -29,6 +29,14 @@
         {
             width: 100%;
 
+            &:focus
+            {
+                .photographer__media__card__link__img,  .photographer__media__card__link__video
+                {
+                    border: 5px solid $primary-color;
+                }
+            }
+
             &__img, &__video
             {
                 width: 100%;

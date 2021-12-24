@@ -7,11 +7,11 @@
     text-decoration: none;
     color: $primary-color;
 
-    &:hover
+    &:hover, &:focus
     {
         border: Solid 2px $primary-color; 
     }
-
+    
     &--selected
     {
         background-color: $primary-color;

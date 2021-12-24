@@ -10,7 +10,7 @@
     background-color: $primary-color;
     color: #ffffff;
 
-    &:hover
+    &:hover, &:focus
     {
         color: #000000;
         background-color: lighten($secondary-color, 10%);
