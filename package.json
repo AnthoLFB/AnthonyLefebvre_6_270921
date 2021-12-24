@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AnthoLFB/AnthonyLefebvre_6_270921/issues"
   },
-  "homepage": "https://github.com/AnthoLFB/AnthonyLefebvre_6_270921#readme"
+  "homepage": "https://github.com/AnthoLFB/AnthonyLefebvre_6_270921#readme",
+  "devDependencies": {
+    "eslint": "^8.5.0"
+  }
 }
