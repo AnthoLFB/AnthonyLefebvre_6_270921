@@ -47,7 +47,12 @@
     {
         cursor: pointer;
         text-decoration: none;
-        
+
+        &:focus
+        {
+            border: Solid 2px $primary-color; 
+        }
+    
         &__image
         {
             width: 100%;
