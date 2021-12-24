@@ -397,7 +397,7 @@ textarea {
   text-decoration: none;
   color: #901C1C;
 }
-.photographer_tag:hover {
+.photographer_tag:hover, .photographer_tag:focus {
   border: Solid 2px #901C1C;
 }
 .photographer_tag--selected {
@@ -432,6 +432,10 @@ textarea {
 .main__contenu__photographer-card__link {
   cursor: pointer;
   text-decoration: none;
+}
+.main__contenu__photographer-card__link:focus .main__contenu__photographer-card__link__title {
+  text-decoration: underline;
+  text-decoration-color: #901C1C;
 }
 .main__contenu__photographer-card__link__image {
   width: 200px;
@@ -537,7 +541,7 @@ textarea {
   background-color: #901C1C;
   color: #ffffff;
 }
-.photographer__profil__contact__button:hover {
+.photographer__profil__contact__button:hover, .photographer__profil__contact__button:focus {
   color: #000000;
   background-color: #dc7b66;
 }
@@ -584,6 +588,9 @@ textarea {
 }
 .photographer__media__card__link {
   width: 100%;
+}
+.photographer__media__card__link:focus .photographer__media__card__link__img, .photographer__media__card__link:focus .photographer__media__card__link__video {
+  border: 5px solid #901C1C;
 }
 .photographer__media__card__link__img, .photographer__media__card__link__video {
   width: 100%;
@@ -697,26 +704,39 @@ textarea {
   right: 25px;
   z-index: 12;
 }
-.lightbox__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+.lightbox__media__container {
+  width: calc(100% - 150px);
+  margin: 0 75px;
+  height: 100vh;
+  position: relative;
   margin: 0 75px;
   /* Espace pour les boutons (donc = à leur taille) */
 }
-.lightbox__container__loader {
+.lightbox__media__container__image-keeper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+.lightbox__media__container__image-keeper__loader {
   width: 38px;
   height: 38px;
   opacity: 0.5;
   background: url(../../images/svg/loader.svg) center center/100% 100% no-repeat;
 }
-.lightbox__container img, .lightbox__container video {
-  max-height: 90vh;
-  width: auto;
-  object-fit: cover;
-  height: auto;
+.lightbox__media__container__image-keeper img, .lightbox__media__container__image-keeper video {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   animation: lightBoxIn 0.5s;
+}
+.lightbox__media__container__image-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  font-size: 2.3em;
+  color: #901C1C;
 }
 
 /* Fermeture */
@@ -891,6 +911,9 @@ textarea {
 .header__link {
   cursor: pointer;
   text-decoration: none;
+}
+.header__link:focus {
+  border: Solid 2px #901C1C;
 }
 .header__link__image {
   width: 100%;
