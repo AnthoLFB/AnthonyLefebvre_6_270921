@@ -31,7 +31,7 @@
                 <!-- Remplissage automatique de la section avec les médias du photographe -->
                 <div class="photographer__media__sort">
                     <label class="photographer__media__sort__title">Trier par :</label>
-                    <select class="photographer__media__sort__list" name="sort" id="sort-name">
+                    <select aria-label="liste des options disponibles" class="photographer__media__sort__list" name="sort" id="sort-name">
                         <option value="likes">Popularité</option>
                         <option value="date">Date</option>
                         <option value="title">Titre</option>
@@ -40,11 +40,11 @@
             </section>
 
             <section class="form" id="form">
-                <form action="" method="get" class="contact-form">
+                <form action="" method="post" class="contact-form">
                     <div calss="contact-form__content">
                         <div class="contact-form__content__header">
                             <h1 class="contact-form__content__header__title">Contactez-moi </br> <span class="contact-form__content__header__photographer-name"></span></h1> 
-                            <button aria-label="Fermer" class="contact-form__content__header__close" type="button"></button>
+                            <button aria-label="Fermer" class="contact-form__content__header__close" id="contact-form__content__header__close" type="button"></button>
                         </div>
         
                         <div class="contact-form__content__field">
