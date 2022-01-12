@@ -116,7 +116,7 @@ class GalleryView
         //Création des éléments HTML
         let htmlSegment = 
             `
-                <a class="photographer__media__card__link" href="images/photographers/${this.photographer.name}/${media.image}"><img class="photographer__media__card__link__img" src="images/photographers/${this.photographer.name}/${media.image}" alt="Photographie réalisée par ${this.photographer.name}. cliquez pour agrandir"></a>
+                <a class="photographer__media__card__link" href="images/photographers/${this.photographer.name}/${media.image}"><img class="photographer__media__card__link__img" src="images/photographers/${this.photographer.name}/${media.image}" alt="${media.title} est une photographie réalisée par ${this.photographer.name}. Cliquez pour agrandir"></a>
                 <div class="photographer__media__card__infos">
                     <h2 class="photographer__media__card__infos__title">${media.title}</h2>
                     <p class="photographer__media__card__infos__likes"><span aria-label="nombre de likes pour cette vidéo :" class="photographer__media__card__infos__likes__number">${media.likes}</span> </p>
