@@ -74,6 +74,11 @@
                 width: 50px;
                 height: 100px;
                 background: url(../../images/svg/whiteCross.svg) center center / 100% 100% no-repeat transparent;
+
+                &:focus 
+                {
+                    border: solid 3px #000000;
+                }
             }
         }
 
@@ -90,6 +95,11 @@
             {
                 border: none;
                 border-radius: 5px;
+
+                &:focus
+                {
+                    border: solid 3px #000000;
+                }
             }
 
             &__input[type=text], &__input[type=email]
@@ -105,6 +115,11 @@
                 color: #FFFFFF;
                 background-color: $primary-color;
                 padding: 1em;
+
+                &:focus 
+                {
+                    border: solid 3px #000000;
+                }
 
                 @include mediumScreen
                 {
