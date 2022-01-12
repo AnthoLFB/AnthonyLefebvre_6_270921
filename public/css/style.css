@@ -815,6 +815,9 @@ textarea {
   height: 100px;
   background: url(../../images/svg/whiteCross.svg) center center/100% 100% no-repeat transparent;
 }
+.contact-form__content__header__close:focus {
+  border: solid 3px #000000;
+}
 .contact-form__content__field {
   flex-direction: column;
 }
@@ -824,6 +827,9 @@ textarea {
 .contact-form__content__field__input {
   border: none;
   border-radius: 5px;
+}
+.contact-form__content__field__input:focus {
+  border: solid 3px #000000;
 }
 .contact-form__content__field__input[type=text], .contact-form__content__field__input[type=email] {
   height: 50px;
@@ -835,6 +841,9 @@ textarea {
   color: #FFFFFF;
   background-color: #901C1C;
   padding: 1em;
+}
+.contact-form__content__field__btn:focus {
+  border: solid 3px #000000;
 }
 @media screen and (max-width: 768px) {
   .contact-form__content__field__btn {
