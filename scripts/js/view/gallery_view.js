@@ -192,7 +192,7 @@ class GalleryView
         
         spanElement.addEventListener('click', this.likeMedia.bind(this, article));
         
-        spanElement.innerHTML = `<i class="far fa-heart" title="ajouter un j'aime à cette photo"></i>`;
+        spanElement.innerHTML = `<span class="far fa-heart" title="ajouter un j'aime à cette photo"></span>`;
 
         container.appendChild(spanElement);
     }
