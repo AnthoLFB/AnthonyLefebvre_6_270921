@@ -1,3 +1,9 @@
+/* Police */
+@mixin fontStyleBold
+{
+    font-family: "Roboto", sans-serif;
+}
+
 /* Affichage de l'ombre sur les elements */
 @mixin boxShadow($color: $tertiary-color) 
 {
