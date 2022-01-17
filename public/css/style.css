@@ -2,6 +2,7 @@
 /* --- Import des variables, fonctions, et mixins --- */
 /* Couleurs principales du site */
 /* Map pour le responsive */
+/* Police */
 /* Affichage de l'ombre sur les elements */
 /*---- Responsive ----*/
 /* Ecran de taille inférieur a 576px */
@@ -388,6 +389,19 @@ textarea {
   }
 }
 
+/* Typo du site */
+/*--- Définition des polices utilisées pour le site ---*/
+@font-face {
+  font-family: "Roboto";
+  src: url("../../font/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-size: 1em;
+  font-family: "Roboto";
+}
+
 /* --- Import des composants --- */
 /* Style de base des tags */
 .photographer_tag {
@@ -619,7 +633,7 @@ textarea {
 }
 .photographer__media__card__infos__likes__heart-logo::before {
   font-family: "Font Awesome 5 Free";
-  content: "\f004";
+  content: "";
   display: inline-block;
   vertical-align: middle;
   font-weight: 900;
